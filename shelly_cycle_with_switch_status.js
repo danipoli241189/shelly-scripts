@@ -67,12 +67,14 @@ let makeDecision = function (status0, status1) {
     console.log("Accendo Gruppo 0");
     setSwitch(0, "on");
   } else if (status0 === 1 && status1 === 0) {
-    console.log("Accendo Gruppo 1");
+    console.log("Spengo Gruppo 0 e Accendo Gruppo 1");
+    setSwitch(0, "off");
     setSwitch(1, "on");
+
   } else if (status0 === 0 && status1 === 1) {
     console.log("Accendo entrambi Gruppi");
     setSwitch(0, "on");
-    setSwitch(1, "on");
+    //setSwitch(1, "on");
   } else if (status0 === 1 && status1 === 1) {
     console.log("Spengo entrambi Gruppi");
     setSwitch(0, "off");
